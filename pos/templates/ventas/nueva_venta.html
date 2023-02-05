@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+POS Ventas | Nueva venta
+{% endblock %}
+
+{% block body %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet"
+    type="text/css" />
+
+<div class="titulo-home">
+    <h1>Nueva venta</h1>    
+</div>
+<div class="container-detalle-venta">
+    <input type="text" placeholder="Código de producto" name="codigo_pistola" id="codigo_pistola">
+    <input type="text" placeholder="Nombre del producto" name="nombre_producto" id="nombre_producto">
+    <button class="btn btn-success">Seleccionar</button>
+    <br>
+    <table>
+        <tr>
+            <th>CODIGO</th>
+            <th>NOMBRE</th>
+            <th>PRECIO (U)</th>
+            <th>CANTIDAD</th>
+            <th>TOTAL</th>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>nombre producto</td>
+            <td>$2.500</td>
+            <td>2</td>
+            <td>$5.000</td>
+        </tr>
+        
+    </table>
+</div>
+<div class="container-metodo-pago">
+    <input type="radio" name="tipo-pago" id="efectivo" value="efetivo" checked="checked"><label for="efectivo">Efectivo</label>
+    <input type="radio" name="tipo-pago" id="debito" value="debito"><label for="debito">Débito</label>
+    <input type="radio" name="tipo-pago" id="credito" value="credito"><label for="credito">Crédito</label>
+    <input type="radio" name="tipo-pago" id="transferencia" value="transferencia"><label for="transferencia">Transferencia</label>
+    <input type="radio" name="tipo-pago" id="edenred" value="edenred"><label for="edenred">Edenred</label>
+</div>
+<div class="resumen-venta">
+    <h4>METODO DE PAGO: rb_seleccionado</h4>
+    <h4>TOTAL:</h4>
+    <h1>$5.000</h1>
+</div>
+<div class="final venta">
+    <button class="btn btn-success" id="confirmar" name="confirmar">Confirmar venta</button>
+</div>
+<script>
+$(function () {
+    var availableNames = [
+        {% for producto in productos %}
+            "{{producto.nombre}}",
+    {% endfor %}
+];
+$("#nombre_producto").autocomplete({
+    source: availableNames
+});
+} );
+</script>
+{% endblock %}

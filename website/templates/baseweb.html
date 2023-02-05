@@ -1,0 +1,54 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great+Vibes">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'img/logo-png-128-nobg.png' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+
+    
+    <title>
+    {% block title%}{% endblock %}
+    </title>   
+</head>
+
+<body>
+    <div class="container"> 
+    <header>        
+        <img src="{% static 'img/piliscoffee_logo_no_bg_1.png' %}" alt="logo-piliscoffee" id="img-navbar">
+        <div class="hamburger-container">
+            <div class="hamburger" class="shadow">                
+                <div class="line-hamburger"></div>
+                <div class="line-hamburger"></div>
+                <div class="line-hamburger"></div>
+            </div>   
+        </div>
+        <nav class="navbar"> 
+            <span class="shadow"><a href="{% url 'homeweb' %}">INICIO</a></span>
+            <span class="shadow"><a href="{% url 'cafes' %}">CAFÉS</a></span>
+            <span class="shadow"><a href="{% url 'chocolates' %}">CHOCOLATES</a></span>
+            <span class="shadow"><a href="{% url 'postres-helados' %}">POSTRES</a></span>
+            <span><a href="https://www.instagram.com/pilis_coffee/" target="_blank"><img src="{% static 'img/ig-logo-cafe.png' %}" alt="ig-logo-cafe" id="ig-logo-navbar" class="shadow"></a></span>
+        </nav>
+            
+    </header>
+    <div class="to-hide-from-navbar">
+        {% block body %}
+        {% endblock %}
+    </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/navbar.js' %}"></script>
+   {% block scripts %}
+   {% endblock %}
+</body>
+</html>

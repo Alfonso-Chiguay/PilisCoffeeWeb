@@ -1,0 +1,84 @@
+{% extends 'baseweb.html' %}
+{% load static %}
+{% block title %}
+Pili's Coffee - Cafetería y pastelería
+{% endblock %}
+
+{% block body %}
+<br>    
+<div class="welcome-message-container">
+    <span class="text-home-1">Creemos que</span>
+    <span class="text-home-2 shadow">UNA TAZA DE CAFÉ</span>
+    <span class="text-home-1">es uno de los más simples</span>
+    <span class="text-home-2 shadow">PLACERES DE LA VIDA</span>
+    <img src="{% static 'img/cup-coffee-home.png' %}" alt="cup-coffee-piliscoffee" class="img-home shadow">
+</div>
+<br><br>
+
+    <span class="info-title shadow reveal">¿Que encuentras con nosotros?</span>
+    
+    <div class="img-text reveal">
+        <img src="{% static 'img/heart-coffee.png' %}" alt="heart-coffee-piliscoffee" id="heart-coffee">
+        <div class="text-btn-bottom">
+            <span>Las mejores marcas y sabores de café los encuentras con nosotros</span>
+            <br>
+            <a href="{% url 'cafes' %}">
+                Conócelos
+            </a>
+        </div>
+    </div>
+    
+    <div class="img-text imtx-left reveal">
+        <img src="{% static 'img/bombones-heart.png' %}" alt="bombones-heart-piliscoffee" id="bombones-heart">
+        <div class="text-btn-bottom">
+            <span>Comer chocolate siempre es una buena idea, y es por eso que nos preocupamos por endulzar tu vida</span>
+            
+        </div>
+    </div>
+    
+    <div class="img-text reveal">
+        <img src="{% static 'img/donuts-home.png' %}" alt="donuts-piliscoffee" id="donuts-home">
+        <div class="text-btn-bottom">
+            <span>Tenemos los más ricos postres y acompañamientos para tu café, para que tu experiencia sea única</span>
+            
+        </div>
+    </div>
+    
+    <div class="img-text imtx-left reveal">
+        <img src="{% static 'img/helado-home.png' %}" alt="helado-home-piliscoffee" id="helado-home">
+        <div class="text-btn-bottom">
+            <span>Porque conocemos el calor de Angol, tenemos los productos mas refrescantes para tí</span>
+            <br>
+            <a class="btn-helado" href="{% url 'postres-helados' %}">
+                Ver carta
+            </a>
+        </div>
+    </div>
+
+    <div class="img-text reveal">
+        <img src="{% static 'img/productos-para-cafe.png' %}" alt="products-cafe-piliscoffee" id="products-home">
+        <div class="text-btn-bottom">
+            <span>Para que disfrutes tu café en cualquier lugar, ¡tenemos los productos perfectos para tí!, termos, moledoras, mugs y más</span>
+            
+        </div>
+    </div>
+    <br>
+    <div class="nuestro-espacio-container">
+        <span class="info-title shadow reveal">¿Donde nos encuentras?</span>
+        <div class="map-container reveal">
+            <span class="under-map">Nuestro local está en las dependencias del Supermercado Ganga. Avenida O'higgins 1677 local B<br><br></span>
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.1394264980313!2d-72.68713388819421!3d-37.810203071859654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966bb3c1189ec829%3A0x7f5e5179515eec9c!2sPili&#39;s%20Coffee!5e0!3m2!1ses-419!2scl!4v1671658726195!5m2!1ses-419!2scl" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map shadow"></iframe>
+            
+        </div>
+    </div>
+    <br><br>
+    
+    
+
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'js/reveal.js' %}"></script>
+{% endblock %}
