@@ -96,6 +96,7 @@ nav{
 	font-size: 48px;
 	color: #8E6224;
 	opacity: 0.8;
+	text-align: center;
 }
 
 .img-home{
@@ -229,6 +230,46 @@ nav{
 	transform: translateX(-10%);	
 	transition: 0.5s;
 }
+
+.cards-coffee-container{
+	display: flex;		
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin: 0 20%;
+}
+
+.card-coffee {	
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	width: 300px;
+	height: 350px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 10%;
+	margin-top: 5%;
+	transition: 1s;
+	background-image: linear-gradient(to left, #523a0e, #c59f6a 25%, #c59f6a 75%, #412b04 100%);
+}
+
+.card-coffee img{
+	margin: 2%;
+	width: auto;
+	height: auto;
+	border-radius: 10%;
+	object-fit: contain;
+	
+	
+}
+
+.card-coffee:hover{
+	transition: 1s;
+	transform: scale(1.1);
+}
+.card-coffee h4{
+	margin-top: 10px;
+	text-align: center;
+}
+
 
 
 @media only screen and (max-width: 950px){

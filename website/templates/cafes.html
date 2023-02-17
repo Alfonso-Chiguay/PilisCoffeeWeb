@@ -6,7 +6,22 @@ Pili's Coffee: Cafés
 
 {% block body %}
 
-<h1>CAFES</h1>
+<div class="welcome-message-container">
+    <h1 class="text-home-2">Disfruta del mejor café, endulza tu día con nosotros</h1>
+    <h2 class="text-home-1">Conoce la variedad de cafés que encontrarás en nuestro local</h2>
+</div>
+
+<div class="cards-coffee-container">    
+    {% for marca in marcas %}        
+        <div class="card-coffee">
+            
+            <img src="{% static '/'%}{{marca.ruta_img}}" alt="{{marca.nombre}}-LOGO">
+            
+            <h4 class="brand-name">{{marca.nombre}}</h4>
+        </div>
+        
+    {% endfor%}
+</div>
 
 {% endblock %}
 
