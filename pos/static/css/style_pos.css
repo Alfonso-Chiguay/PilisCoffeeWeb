@@ -35,17 +35,15 @@ nav {
     font-size: 24px;
 }
 
+.menu a:hover{
+	color: #cea558
+}
+
 .menu span{
 	margin: 0 1rem;
 	color: white;
     font-family: "Roboto Thin";
     font-size: 24px;
-}
-
-.menu a:hover {
-	color: #caa97d;
-	font-weight: bold;	
-    font-size: 28px;
 }
 
 .hamburger {
@@ -107,11 +105,32 @@ nav {
     font-size: 24px;
 }
 
-.mobile-menu a:hover {
-	color: #caa97d;
-	background-color: #311e02;	
-	font-weight: bold;	
-    font-size: 32px;
+.container-home{
+	background-color: #58491e27;
+	padding: 30px 70px 60px;
+	box-shadow: 5px 10px 8px #888888;
+	display: flex;
+	flex-direction: column;	
+	align-items: center;
+	border-radius: 40px;
+	margin: 2% 30%;
+
+}
+
+.menu-ventas {
+	position: fixed;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+	background-color: #000;
+  }
+  
+.btn-venta {
+	display: block; /* Hacer que los botones sean elementos de bloque */
+	margin-bottom: 10px;
+
 }
 
 @keyframes cambio {

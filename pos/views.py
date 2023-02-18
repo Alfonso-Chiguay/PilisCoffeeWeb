@@ -5,7 +5,9 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Producto
+from .models import Producto, Venta
+from datetime import datetime, timedelta, time
+
 
 class Login(View):
     def get(self, request):
@@ -43,7 +45,18 @@ class Logout(View):
 
 class Home(LoginRequiredMixin, View):
     def get(self, request):
-        return render(request, 'pos_home.html')
+        today = datetime.now().date()
+        tomorrow = today + timedelta(1)
+        today_start = datetime.combine(today, time())
+        today_end = datetime.combine(tomorrow, time())
+
+        sales_list = Venta.objects.filter(fecha__lte=today_end, fecha__gte=today_start)
+        sales_amount = 0
+        for sale in sales_list:
+            sales_amount += sale.total
+
+        context = {'today': today.strftime('%d/%m/%Y'), 'sales_count': sales_list.count, 'sales_amount': "$"+f"{sales_amount:,}".replace(",",".")}
+        return render(request, 'pos_home.html', context)
 
 class VentasHome(LoginRequiredMixin, View):
     def get(self, request):

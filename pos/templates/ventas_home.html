@@ -6,14 +6,12 @@ POS Ventas
 
 {% block body %}
 
-<div class="titulo-home">
-    <h1>Módulo de ventas</h1>
-</div>
-<div class="container-home">
-    <h4>¿Que quieres hacer hoy?</h4>
-    <a class="btn btn-info" href="{% url 'nueva_venta' %}">Nueva venta</a>
-    <a class="btn btn-info">Consultar precio</a>
-    <a class="btn btn-info">Deshabilitar producto</a>
+
+
+<div class="menu-ventas">    
+    <a class="btn-venta" href="{% url 'nueva_venta' %}">Nueva venta</a>
+    <a class="btn-venta">Consultar precio</a>
+    <a class="btn-venta">Deshabilitar producto</a>
 </div>
 
 
