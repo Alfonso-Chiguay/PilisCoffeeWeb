@@ -6,7 +6,22 @@ Pili's Coffee: Chocolates
 
 {% block body %}
 
-<h1>CHOCOLATES</h1>
+<div class="welcome-message-container">
+    <h1 class="text-home-2">El café hace posible salir de la cama</h1>
+    <h2 class="text-home-1">Pero el chocolate hace que valga la pena</h2>
+</div>
+
+<div class="cards-coffee-container">    
+    {% for marca in marcas %}        
+        <div class="card-coffee">
+            
+            <img src="{% static '/'%}{{marca.ruta_img}}" alt="{{marca.nombre}}-LOGO">
+            
+            <h4 class="brand-name">{{marca.nombre}}</h4>
+        </div>
+        
+    {% endfor%}
+</div>
 
 {% endblock %}
 
