@@ -12,12 +12,11 @@ Ingresar al sistema
 <div class="container">
     
     <form action="" method="POST">
-        {% if form.errors %}
-        <h1>a</h1>
-    <div class="alert alert-danger">
-        {{ form.errors }}
-    </div>
-    {% endif %}
+        {% if form.errors %}        
+            <div class="alert alert-danger">
+                {{ form.errors }}
+            </div>
+        {% endif %}
     {%csrf_token%}
         <div class="mb-3 col-12 logo-login"><img src="{% static 'img/logo-png-128-nobg.png' %}" alt="logo-piliscoffee"></div>
         <div class="mb-3 col-12">

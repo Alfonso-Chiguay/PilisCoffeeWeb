@@ -117,69 +117,125 @@ nav {
 
 }
 
-.menu-ventas {
-	position: fixed;
-	left: 0;
-	top: 50%;
-	transform: translateY(-50%);
+.menu-ventas, .menu-inventario, .menu-reportes {
 	display: flex;
-	flex-direction: column;
-	background-color: #000;
-  }
-  
-.btn-venta {
-	display: block; /* Hacer que los botones sean elementos de bloque */
-	margin-bottom: 10px;
-
+	height: 80px;
+	background-color: #000;	
+	align-items: center;
+	justify-content: center;
+	border-top: 1px solid white;
 }
 
-@keyframes cambio {
-	0% {
-		margin-left: 0%;
-	}
-	15% {
-		margin-left: 0%;
-	}
+.menu-ventas a{
+	text-decoration: none;
+	color: white;
+	font-family: 'Roboto';
+	font-size: 20px;
+	padding: 20px 200px;	
+}
 
-	20% {
-		margin-left: -100%;
-	}
-	35% {
-		margin-left: -100%;
-	}
+.menu-inventario a, .menu-reportes a{
+	text-decoration: none;
+	color: white;
+	font-family: 'Roboto';
+	font-size: 20px;
+	padding: 20px 100px;
+}
 
-	40% {
-		margin-left: -200%;
-	}
+.menu-ventas a:hover, .menu-inventario a:hover, .menu-reportes a:hover{
+	color: #cea558;
+	background-color: #58431c94;
+}
 
-	55% {
-		margin-left: -200%;
-	}
-
-	60% {
-		margin-left: -300%;
-	}
-	
-	75% {
-		margin-left: -300%;
-	}
-
-	80% {
-		margin-left: -400%;
-	}
-	100% {
-		margin-left: -400%;
+@media(max-width: 1750px){
+	.menu-inventario a{
+		padding: 20px 70px;
 	}
 }
 
-@media screen and (min-width: 700px) {
+
+@media(max-width: 1650px){
+	.menu-ventas a{
+		padding: 20px 100px;
+	}	
+}
+
+@media(max-width: 1450px){
+	.menu-inventario a{
+		padding: 20px 40px;
+		font-size: 15px;
+	}
+	.menu-reportes a{
+		padding: 20px 60px;
+
+	}
+}
+
+@media (min-width: 1300px) {
 	.mobile-menu, .hamburger {
 		display: none;
 	}
 
 	.menu {
 		display: flex;
-	}	
+	}
+
+	
+}
+
+@media(max-width: 1350px){
+	.menu-inventario{
+		height: 85px;		
+	}
+	
+	.menu-inventario a{
+		padding: 20px 8px;
+		font-size: 15px;
+		text-align: center;		
+		
+	}
+
+	
+
+
+}
+
+@media (max-width:1050px){
+	
+	.menu-ventas a{
+		padding: 20px 30px;
+	}
+
+	.container-home{
+		margin: 5% 20%;
+	}
+
+	.menu-reportes a{
+		font-size: 18px;
+		padding: 20px 30px;
+		text-align: center;
+	}
+}
+
+@media (max-width:640px){
+	
+	.menu-ventas a{
+		padding: 20px 10px;
+		font-size: 15px;
+	}
+
+	.container-home{
+		margin: 5% 5%;
+	}
+
+	.menu-reportes{
+		height: 85px;
+	}
+	.menu-reportes a{
+		font-size: 15px;
+		padding: 20px;
+		text-align: center;
+	}
 }
 
 .container{

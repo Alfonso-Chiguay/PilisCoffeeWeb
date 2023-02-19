@@ -23,7 +23,7 @@
 <body>  
 	<header>
 		<nav>
-			<img src="{% static 'img/logo-navbar.png' %}" alt="logo-piliscoffee" class="logo">
+			<a href="{% url 'home_pos' %}"><img src="{% static 'img/logo-navbar.png' %}" alt="logo-piliscoffee" class="logo"></a>
 
 			<div class="menu">  
                 {% if user.is_authenticated %}     
@@ -43,9 +43,10 @@
 			<button class="hamburger">
 				<span class="material-icons">menu</span>
 			</button>
-		</nav>
 
-		<div class="mobile-menu">     
+            
+		</nav>
+        <div class="mobile-menu">     
             {% if user.is_authenticated %}   
                 <strong><span>Usuario: {{ user.username }}</span></strong> 
                 <a href="{% url 'home_pos' %}">Inicio</a>
@@ -56,7 +57,8 @@
             {% else %}
                 <div class="ingresar"><a href="{% url 'login' %}">Ingresar</a></div>
             {% endif %}    	
-		</div>
+        </div>
+		
 	</header>
 
     
